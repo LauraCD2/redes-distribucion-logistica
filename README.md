@@ -1,4 +1,4 @@
-# grafos-discretas
+# redes distribucion logistica
 
 Proyecto Final de la asignatura matemáticas discretas UIS
 
