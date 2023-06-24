@@ -2,7 +2,7 @@
 
 Proyecto Final de la asignatura matemáticas discretas UIS
 
-    ![1687345391325](image/README/1687345391325.png "LOGO PROJECT")
+    ![1687345391325](image/README/1687345391325.png)
 
 **IDEA PRINCIPAL:**
 
