@@ -14,7 +14,7 @@ LogiCo, una empresa de distribución y logística, enfrenta el desafío de optim
 
 Para abordar este problema, LogiCo ha decidido utilizar el algoritmo de Dijkstra, ampliamente utilizado en la teoría de grafos, para encontrar rutas óptimas en su red de distribución y logística. En este enfoque, las ubicaciones clave, como almacenes, centros de distribución, tiendas y clientes, se representan como nodos en un grafo, donde las aristas indican las rutas posibles entre ellos.
 
-La novedad radica en la consideración de variables temporales y costos asociados a cada ruta. Siguiendo las sugerencias de la profesora, LogiCo incluirá aspectos como cierres viales por derrumbes, condiciones climáticas adversas y la presencia de peajes en la planificación de rutas. Estos factores cambiantes influirán en la elección de la ruta más corta y óptima, minimizando tanto la distancia recorrida como los costos asociados.
+La novedad radica en la consideración de variables temporales y costos asociados a cada ruta. LogiCo incluirá aspectos como cierres viales por derrumbes, condiciones climáticas adversas y la presencia de peajes en la planificación de rutas. Estos factores cambiantes influirán en la elección de la ruta más corta y óptima, minimizando tanto la distancia recorrida como los costos asociados.
 
 Al acotar el problema a una región específica, LogiCo puede tener en cuenta las características locales y adaptar sus decisiones de planificación en consecuencia. Esto incluye tener en cuenta los cierres viales temporales, la presencia de peajes en ciertas rutas y la variabilidad climática de la región. Considerando estos aspectos, el algoritmo de Dijkstra permitirá a LogiCo determinar las rutas más eficientes, minimizando los tiempos y costos de entrega.
 
