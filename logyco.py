@@ -16,6 +16,7 @@ import matplotlib.pyplot as plt
 def dijkstra(graph, start):
     distances = {node: float('inf') for node in graph}
     distances[start] = 0
+    previous_nodes = {node: None for node in graph}
 
     queue = [(0, start)]
 
@@ -30,34 +31,10 @@ def dijkstra(graph, start):
 
             if distance < distances[neighbor]:
                 distances[neighbor] = distance
+                previous_nodes[neighbor] = current_node
                 heapq.heappush(queue, (distance, neighbor))
 
-    return distances
-
-def get_route(graph, start, end):
-    distances = dijkstra(graph, start)
-    route = [end]
-    current_node = end
-
-    while current_node != start:
-        neighbors = graph[current_node]
-        min_distance = float('inf')
-        min_neighbor = None
-
-        for neighbor, edge_info in neighbors.items():
-            distance = distances[neighbor]
-            if distance < min_distance:
-                min_distance = distance
-                min_neighbor = neighbor
-
-        if min_neighbor is None:
-            break
-
-        route.append(min_neighbor)
-        current_node = min_neighbor
-
-    route.reverse()
-    return route
+    return distances, previous_nodes
 
 # Ejemplo de grafo de distribución y logística con aspectos adicionales (incluyendo costos de peajes)
 graph = {
@@ -72,38 +49,24 @@ graph = {
     'Tienda H': {}
 }
 
-locations = list(graph.keys())  # Lista de ubicaciones disponibles
-
-# Solicitar al usuario ingresar la ubicación de origen
-start_node = input("Ingrese la ubicación de origen (Opciones: {}): ".format(', '.join(locations)))
-while start_node not in locations:
-    print("Ubicación no válida. Intente nuevamente.")
-    start_node = input("Ingrese la ubicación de origen (Opciones: {}): ".format(', '.join(locations)))
-
-# Solicitar al usuario ingresar la ubicación de destino
-end_node = input("Ingrese la ubicación de destino (Opciones: {}): ".format(', '.join(locations)))
-while end_node not in locations:
-    print("Ubicación no válida. Intente nuevamente.")
-    end_node = input("Ingrese la ubicación de destino (Opciones: {}): ".format(', '.join(locations)))
-
-distances = dijkstra(graph, start_node)
-route = get_route(graph, start_node, end_node)
+start_node = 'Almacén A'
+distances, previous_nodes = dijkstra(graph, start_node)
 
 print("Distancias más cortas desde el nodo de inicio (" + start_node + "):")
 for node, distance in distances.items():
     print("Nodo:", node, "- Distancia:", distance)
 
-print("\nRuta óptima desde", start_node, "a", end_node, "con sus costos:")
-total_cost = 0
-for i in range(len(route)-1):
-    current_node = route[i]
-    next_node = route[i+1]
-    edge_info = graph[current_node][next_node]
-    cost = edge_info['peaje_costo'] if edge_info['peaje'] else 0
-    total_cost += cost
-    print("Desde", current_node, "hasta", next_node, "- Costo:", cost)
-
-print("\nCosto total de la ruta:", total_cost)
+print("\nRutas más óptimas:")
+for node, prev_node in previous_nodes.items():
+    if prev_node is not None:
+        route = []
+        current_node = node
+        while current_node is not None:
+            route.append(current_node)
+            current_node = previous_nodes[current_node]
+        route.reverse()
+        cost = distances[node]
+        print("Ruta:", " -> ".join(route), "- Costo:", cost)
 
 # Imprimir el grafo
 plt.figure(figsize=(10, 10))
