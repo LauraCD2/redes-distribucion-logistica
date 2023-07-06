@@ -1,3 +1,5 @@
+**IMPORTANTE**
+
 Antes de ejecutar el programa , se debe tener en cuenta lo siguiente :
 
     1.ejecutar en orden de marcas del archivo main 
