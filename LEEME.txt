@@ -5,4 +5,6 @@ Antes de ejecutar el programa , se debe tener en cuenta lo siguiente :
     1.ejecutar en orden de marcas del archivo main 
     Programa principal -> Image source -> GUI
 
-    2. Eliminar los archivos de 'grafo_ciudades.png' y 'grafo_camino.png'
+    2.Eliminar los archivos de 'grafo_ciudades.png' y 'grafo_camino.png'
+
+    3.Si se presenta algun otro error con las imagenes , reiniciar kernel
