@@ -27,3 +27,15 @@ Al utilizar el algoritmo de Dijkstra con variables temporales y costos, LogiCo l
 3. Adaptarse a situaciones cambiantes: La inclusión de variables temporales en la planificación de rutas permitirá a LogiCo responder de manera eficiente a situaciones imprevistas, como cierres viales o condiciones climáticas adversas. La empresa podrá ajustar las rutas en tiempo real y tomar decisiones informadas para minimizar los impactos negativos en la entrega de productos.
 4. Brindar un servicio de calidad: La optimización de las rutas de distribución y logística permitirá a LogiCo ofrecer un servicio más rápido y confiable. Al reducir los tiempos de entrega y mejorar la eficiencia en la distribución de productos, la empresa podrá satisfacer las expectativas y fortalecer su reputación en el mercado.
 5. Obtener ventajas competitivas: Al implementar un sistema de distribución y logística optimizado, LogiCo podrá obtener ventajas competitivas en el mercado. La eficiencia en la entrega de productos y la capacidad de adaptarse a situaciones cambiantes brindarán a la empresa una posición sólida frente a la competencia, lo que puede resultar en un aumento de la cuota de mercado y el crecimiento empresarial.
+
+**IMPORTANTE***
+
+Antes de ejecutar el programa , se debe tener en cuenta lo siguiente :
+
+    1. Ejecutar en orden de marcas del archivo main
+    Programa principal -> Image source -> GUI
+
+    2. Eliminar los archivos de 'grafo_ciudades.png' y 'grafo_camino.png' si se desea ejecutar el programa
+    en una segunda ocasión.
+
+    3. Si se presenta algún error con las imagenes y demás , reiniciar kernel.
