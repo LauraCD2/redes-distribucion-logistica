@@ -33,7 +33,39 @@ Para visualizar la solución encontrada, se utilizan bibliotecas como NetworkX y
 4. Proporcionar resultados numéricos y visuales: Además de encontrar la ruta óptima, se pretende ofrecer resultados numéricos y visualizaciones gráficas que faciliten la comprensión y la toma de decisiones. Se proporcionará información sobre el costo total de transporte, el tiempo estimado de entrega y el camino seguido. Asimismo, se generarán gráficos que representen el grafo de ciudades y el camino óptimo, permitiendo una visualización clara y concisa de la solución propuesta.
 5. Mejorar la eficiencia en la logística y distribución: El objetivo final es mejorar la eficiencia en la logística y distribución de LogyCo. Al encontrar la ruta óptima y considerar los obstáculos logísticos, se espera reducir los costos de transporte, acortar los tiempos de entrega y mejorar la satisfacción del cliente. Esta optimización de los procesos de distribución contribuirá a una operación más eficiente y rentable de la empresa.
 
-**IMPORTANTE***
+
+**MODELO E IMPLEMENTACIÓN DE LA SOLUCIÓN PROPUESTA:**
+
+El modelo de solución propuesto se basa en el uso de un grafo dirigido para representar las ciudades objetivo y las conexiones entre ellas. El grafo se construye utilizando la biblioteca NetworkX en Python. Cada ciudad se representa como un nodo en el grafo, y las distancias entre las ciudades se representan como aristas con pesos.
+
+En la implementación del código proporcionado, se utiliza una matriz de adyacencia para representar el grafo de ciudades. Esta matriz es una estructura bidimensional donde cada entrada (i, j) representa la distancia o el costo de transporte entre la ciudad i y la ciudad j.
+
+El algoritmo principal para encontrar la ruta óptima es un algoritmo de búsqueda exhaustiva con backtracking. La función `find_hamiltonian_cycle()` implementa este algoritmo y recibe como entrada la matriz de adyacencia, una lista de ciudades visitadas, la posición actual, el número total de ciudades, un contador de visitas, el costo acumulado, el ciclo hamiltoniano actual, el camino actual y el camino final.
+
+El algoritmo utiliza un enfoque de backtracking para explorar todas las posibles combinaciones de rutas y encontrar el ciclo hamiltoniano de menor costo. Comienza con una ciudad de partida y verifica todas las ciudades vecinas que no han sido visitadas y tienen una conexión válida en la matriz de adyacencia. Luego, realiza una llamada recursiva a la función `find_hamiltonian_cycle()` para continuar el proceso con la siguiente ciudad. Al regresar de la llamada recursiva, desmarca la ciudad actual como no visitada y retira la última ciudad agregada al camino.
+
+El algoritmo continúa explorando todas las posibles combinaciones hasta que todas las ciudades hayan sido visitadas una vez y se haya regresado al punto de partida. Durante el proceso, se actualiza constantemente el ciclo hamiltoniano de menor costo y se guarda el camino final cuando se encuentra un ciclo de menor costo.
+
+Además de la búsqueda exhaustiva, el código también incorpora elementos de simulación para reflejar obstáculos logísticos y condiciones climáticas adversas. Por ejemplo, se simulan ciudades inaccesibles mediante la eliminación de conexiones en la matriz de adyacencia. Del mismo modo, se simula la presencia de lluvia ajustando los pesos de las rutas correspondientes.
+
+Una vez que se ha encontrado el ciclo hamiltoniano de menor costo, se imprimen los resultados, incluyendo el tiempo total en minutos del recorrido óptimo, el camino seguido y una estimación de los días requeridos para completar la distribución de los productos. Además, se generan gráficos utilizando la biblioteca Matplotlib para visualizar el grafo de ciudades y el camino óptimo.
+
+El código también incluye una GUI (Interfaz Gráfica de Usuario) que muestra la imagen del grafo de ciudades y permite al usuario obtener el camino óptimo. La GUI utiliza la biblioteca Tkinter para crear la interfaz y la biblioteca PIL (Python Imaging Library) para cargar y mostrar las imágenes.
+
+
+**CONCLUSIONES:**
+
+En el desarrollo de este proyecto de clase, se abordó el problema de encontrar la ruta óptima para la distribución de productos de la empresa LogyCo. A través de la implementación de un algoritmo de búsqueda exhaustiva con backtracking y la simulación de obstáculos logísticos y condiciones climáticas adversas, se logró ofrecer una solución que optimiza los costos de transporte y los tiempos de entrega.
+
+Al finalizar este trabajo, se pueden destacar las siguientes conclusiones:
+
+1. La implementación de algoritmos de búsqueda exhaustiva es una estrategia eficiente para encontrar soluciones óptimas en problemas de optimización combinatoria. En este proyecto, se utilizó el backtracking para explorar todas las posibles combinaciones de rutas y encontrar el ciclo hamiltoniano de menor costo.
+2. La simulación de obstáculos logísticos y condiciones climáticas adversas permite obtener soluciones más realistas y adaptadas a situaciones imprevistas. La incorporación de derrumbes en carreteras y la presencia de lluvia en ciudades seleccionadas aleatoriamente enriqueció el modelo y permitió tener en cuenta eventos que podrían afectar la planificación de la distribución.
+3. La visualización gráfica de los resultados es una herramienta efectiva para comprender y comunicar la solución propuesta. La generación de gráficos utilizando bibliotecas como NetworkX y Matplotlib permitió representar de manera clara el grafo de ciudades, el camino óptimo y los pesos de las rutas.
+4. La GUI proporciona una forma interactiva de obtener el camino óptimo y mejorar la experiencia del usuario. La incorporación de una interfaz gráfica de usuario utilizando Tkinter y PIL permitió que los usuarios puedan interactuar con el programa y obtener resultados de manera más intuitiva.
+5. Este proyecto sirvió como una oportunidad para aplicar los conceptos teóricos de optimización combinatoria en un problema práctico de logística y distribución. La capacidad de adaptar el modelo a diferentes escenarios y considerar múltiples factores en la toma de decisiones resultó ser valiosa para encontrar soluciones eficientes y efectivas.
+
+**IMPORTANTE**
 
 Antes de ejecutar el programa , se debe tener en cuenta lo siguiente :
 
