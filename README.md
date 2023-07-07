@@ -4,21 +4,26 @@ Proyecto Final de la asignatura matemáticas discretas UIS
 
     ![1687632103310](image/README/1687632103310.png)
 
-**IDEA PRINCIPAL:**
+**INTRODUCCIÓN:**
 
-Optimización de rutas de distribución y logística considerando variables temporales y costos: Utilizando el algoritmo de Dijkstra, LogiCo busca mejorar la eficiencia en la entrega de productos a través de la planificación de rutas óptimas. Se modelarán las ubicaciones de almacenes, centros de distribución y tiendas como nodos en un grafo, considerando aspectos variables como cierres viales, peajes y condiciones climáticas locales.
+La logística y la distribución son aspectos críticos en el funcionamiento eficiente de cualquier empresa, especialmente en aquellas que se dedican a la entrega de productos a múltiples ubicaciones. La optimización de las rutas de distribución es esencial para minimizar los costos de transporte, reducir el tiempo de entrega y mejorar la satisfacción del cliente. En este informe, presentamos una solución al desafío de encontrar la ruta óptima para la logística y distribución de la empresa LogyCo.
 
-**DESCRIPCIÓN DEL PROBLEMA:**
+El problema abordado en este proyecto involucra la planificación de la mejor ruta para entregar los productos de LogyCo a diferentes destinos. El objetivo principal es encontrar un camino que permita visitar todas las ubicaciones requeridas de manera eficiente, minimizando los costos totales y optimizando el tiempo de entrega. Para lograrlo, se utiliza un algoritmo de búsqueda exhaustiva y técnicas de optimización para encontrar el ciclo hamiltoniano de menor costo.
 
-LogiCo, una empresa de distribución y logística, enfrenta el desafío de optimizar su sistema de entrega de productos para aumentar la eficiencia y reducir costos. Con múltiples ubicaciones dispersas por una región específica, la planificación de rutas se vuelve compleja, especialmente al considerar variables temporales y costos asociados.
+**DESCRIPCIÓN:**
 
-Para abordar este problema, LogiCo ha decidido utilizar el algoritmo de Dijkstra, ampliamente utilizado en la teoría de grafos, para encontrar rutas óptimas en su red de distribución y logística. En este enfoque, las ubicaciones clave, como almacenes, centros de distribución y tiendas se representan como nodos en un grafo, donde las aristas indican las rutas posibles entre ellos.
+El modelado del problema se basa en la representación de las ciudades y las conexiones entre ellas mediante una matriz de adyacencia. Esta matriz permite capturar las distancias o costos asociados al transporte entre cada par de ciudades.
 
-La novedad radica en la consideración de variables temporales y costos asociados a cada ruta. LogiCo incluirá aspectos como cierres viales por derrumbes, condiciones climáticas adversas y la presencia de peajes en la planificación de rutas. Estos factores cambiantes influirán en la elección de la ruta más corta y óptima, minimizando tanto la distancia recorrida como los costos asociados.
+El primer paso consiste en ingresar la matriz de adyacencia que contiene la información de las distancias entre las ciudades objetivo. Esta matriz es de tamaño n x n, donde n es el número de ciudades. Cada entrada de la matriz representa la distancia o el costo de transporte entre una ciudad i y una ciudad j.
 
-Al acotar el problema a una región específica, LogiCo puede tener en cuenta las características locales y adaptar sus decisiones de planificación en consecuencia. Esto incluye tener en cuenta los cierres viales temporales, la presencia de peajes en ciertas rutas y la variabilidad climática de la región. Considerando estos aspectos, el algoritmo de Dijkstra permitirá a LogiCo determinar las rutas más eficientes, minimizando los tiempos y costos de entrega.
+Para abordar los posibles obstáculos y desafíos logísticos, se simulan eventos aleatorios, como derrumbes y condiciones climáticas adversas. En el caso de los derrumbes, se genera aleatoriamente un porcentaje de ciudades inaccesibles y se las elimina del cálculo del camino óptimo. Esto se logra marcando las conexiones correspondientes en la matriz de adyacencia como inválidas o asignándoles un valor infinito.
 
-Al utilizar el algoritmo de Dijkstra con variables temporales y costos, LogiCo logrará optimizar su sistema de distribución y logística. La capacidad de adaptarse a condiciones cambiantes en tiempo real permitirá a la empresa responder de manera eficiente a situaciones imprevistas, brindando un servicio de entrega rápido y rentable.
+En cuanto a las condiciones climáticas adversas, se simula la presencia de lluvia en algunas ciudades seleccionadas aleatoriamente. Para reflejar este escenario, se ajustan los pesos de las rutas correspondientes en la matriz de adyacencia. El ajuste de los pesos se realiza generando un valor aleatorio dentro de un rango definido, que representa el aumento en el tiempo o costo de transporte debido a las condiciones climáticas adversas.
+
+Una vez que se han realizado las modificaciones necesarias en la matriz de adyacencia, se aplica un algoritmo de búsqueda exhaustiva utilizando la técnica de backtracking para encontrar el ciclo hamiltoniano de menor costo. Este algoritmo explora todas las posibles combinaciones de rutas y realiza un seguimiento del costo acumulado y las ciudades visitadas en cada paso. Se actualiza el camino óptimo y el costo mínimo cada vez que se encuentra un ciclo hamiltoniano de menor costo.
+
+Para visualizar la solución encontrada, se utilizan bibliotecas como NetworkX y Matplotlib para generar gráficos que representen el grafo de ciudades y el camino óptimo. Estos gráficos proporcionan una representación visual clara de la distribución de las ciudades y permiten analizar y comprender mejor la solución propuesta.
+
 
 **OBJETIVOS:**
 
